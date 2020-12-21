@@ -1,11 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { render, screen } from "@testing-library/react";
 import App from "./App";
+import ReactDOM from "react-dom";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
+test("renders learn react link", () => {
+  render(<App />);
 
-  expect(div.innerHTML).toContain('slat');
-  ReactDOM.unmountComponentAtNode(div);
+  const target = screen.getByText("context");
+  expect(target).toBeInTheDocument();
+  expect(target).toBeVisible();
+  expect(target).toContainHTML("context");
 });
