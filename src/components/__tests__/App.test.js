@@ -1,14 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "../App";
-import CommentBox from "../CommentBox";
+import { shallow } from "enzyme";
+import App from "components/App";
+import CommentBox from "components/CommentBox";
+import CommentList from "components/CommentList";
 
-it("shows a component box", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
+let wrapped;
 
-  //   console.log(div.innerHTML);
-  expect(div.innerHTML).toContain("beard");
+beforeEach(() => {
+  wrapped = shallow(<App />);
+});
 
-  ReactDOM.unmountComponentAtNode(div);
+afterEach(() => {
+    wrapped.unmount();
+  });
+
+it("shows component box and list", () => {
+  expect(
+    wrapped.find(CommentBox).length && wrapped.find(CommentList).length
+  ).toEqual(1);
 });

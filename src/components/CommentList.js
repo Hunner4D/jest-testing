@@ -7,8 +7,10 @@ class CommentList extends Component {
       ryan: "beard",
     };
   }
+
+  
   render() {
-    return <div>{this.state.ryan}</div>;
+    return <div>Comment List</div>;
   }
 }
 
