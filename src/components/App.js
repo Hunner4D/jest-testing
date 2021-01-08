@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import CommentBox from "components/CommentBox";
-import CommentList from 'components/CommentList'
+import CommentList from "components/CommentList";
 
 const App = () => {
   return (
-  <div className="container">
+    <div className="container">
       <CommentBox />
       <CommentList />
-  </div>
+    </div>
   );
 };
 
