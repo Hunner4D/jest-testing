@@ -23,5 +23,10 @@ afterEach(() => {
 });
 
 it("creates on <li> per comment", () => {
-    
+  expect(wrapped.find("li").length).toEqual(2);
+});
+
+it("shows text for each comment", () => {
+  expect(wrapped.render().text()).toContain("comment uno");
+  expect(wrapped.render().text()).toContain("comment dos");
 });
